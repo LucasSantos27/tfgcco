@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:tfg_cco/app/components/button.dart';
 import 'package:tfg_cco/app/components/text.dart';
 import 'package:tfg_cco/app/components/text_field.dart';
+import 'package:tfg_cco/app/routes/app_pages.dart';
 
 import '../controllers/login_controller.dart';
 
@@ -73,7 +74,7 @@ class LoginView extends GetView<LoginController> {
               ),
               const SizedBox(height: 48),
               InkWell(
-                onTap: () => print('Register'),
+                onTap: () => Get.toNamed(Routes.REGISTER),
                 child: NormalBold(
                   normal: 'Ainda não tem conta?',
                   bold: ' Faça seu cadastro.',

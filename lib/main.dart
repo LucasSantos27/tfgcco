@@ -10,6 +10,9 @@ void main() {
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: Color.fromRGBO(0, 156, 59, 1),
+      ),
     ),
   );
 }
