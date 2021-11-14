@@ -21,15 +21,15 @@ class LoginView extends GetView<LoginController> {
                 height: 256,
                 width: 256,
                 alignment: Alignment.center,
-                color: Colors.grey,
-              ),
-              const SizedBox(height: 64),
-              const CustomTextField(
-                hintText: 'Email',
+                child: Image.asset('assets/logo.png'),
               ),
               const SizedBox(height: 32),
               const CustomTextField(
-                hintText: 'Senha',
+                hintText: 'EMAIL',
+              ),
+              const SizedBox(height: 32),
+              const CustomTextField(
+                hintText: 'SENHA',
               ),
               const SizedBox(height: 16),
               Container(
