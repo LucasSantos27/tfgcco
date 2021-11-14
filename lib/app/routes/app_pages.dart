@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
-
+import 'package:tfg_cco/app/modules/forgot_password/bindings/forgot_password_binding.dart';
+import 'package:tfg_cco/app/modules/forgot_password/views/forgot_password_view.dart';
 import 'package:tfg_cco/app/modules/home/bindings/home_binding.dart';
 import 'package:tfg_cco/app/modules/home/views/home_view.dart';
 import 'package:tfg_cco/app/modules/login/bindings/login_binding.dart';
@@ -29,6 +30,11 @@ class AppPages {
       name: _Paths.REGISTER,
       page: () => RegisterView(),
       binding: RegisterBinding(),
+    ),
+    GetPage(
+      name: _Paths.FORGOT_PASSWORD,
+      page: () => ForgotPasswordView(),
+      binding: ForgotPasswordBinding(),
     ),
   ];
 }

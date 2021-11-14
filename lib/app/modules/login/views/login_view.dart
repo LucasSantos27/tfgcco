@@ -36,7 +36,7 @@ class LoginView extends GetView<LoginController> {
                 alignment: Alignment.centerLeft,
                 padding: const EdgeInsets.symmetric(horizontal: 32),
                 child: InkWell(
-                  onTap: () => print('Esqueceu a Senha'),
+                  onTap: () => Get.toNamed(Routes.FORGOT_PASSWORD),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
