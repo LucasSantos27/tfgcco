@@ -49,19 +49,7 @@ class GoogleButton extends StatelessWidget {
           ),
           alignment: Alignment.center,
           padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
-          child: Row(
-            children: [
-              Image.asset('assets/google.png', height: 12, width: 12),
-              const SizedBox(width: 12),
-              Text(
-                'ENTRAR COM GOOGLE',
-                style: TextStyle(
-                  color: Color.fromRGBO(192, 192, 192, 1),
-                  fontSize: 12,
-                ),
-              ),
-            ],
-          ),
+          child: Image.asset('assets/google.png', height: 24, width: 24),
         ),
       ),
     );
@@ -82,18 +70,7 @@ class FacebookButton extends StatelessWidget {
           ),
           alignment: Alignment.center,
           padding: const EdgeInsets.symmetric(vertical: 4),
-          child: Row(
-            children: [
-              Image.asset('assets/facebook.png'),
-              Text(
-                'ENTRAR COM FACEBOOK',
-                style: TextStyle(
-                  color: Color.fromRGBO(255, 255, 255, 1),
-                  fontSize: 12,
-                ),
-              ),
-            ],
-          ),
+          child: Image.asset('assets/facebook.png', height: 48, width: 48),
         ),
       ),
     );
