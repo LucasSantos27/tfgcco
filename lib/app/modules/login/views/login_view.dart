@@ -13,7 +13,7 @@ class LoginView extends GetView<LoginController> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.only(top: 128),
+          padding: const EdgeInsets.only(top: 48),
           alignment: Alignment.center,
           child: Column(
             children: [
