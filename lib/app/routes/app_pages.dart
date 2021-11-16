@@ -5,6 +5,8 @@ import 'package:tfg_cco/app/modules/home/bindings/home_binding.dart';
 import 'package:tfg_cco/app/modules/home/views/home_view.dart';
 import 'package:tfg_cco/app/modules/login/bindings/login_binding.dart';
 import 'package:tfg_cco/app/modules/login/views/login_view.dart';
+import 'package:tfg_cco/app/modules/pre_login/bindings/pre_login_binding.dart';
+import 'package:tfg_cco/app/modules/pre_login/views/pre_login_view.dart';
 import 'package:tfg_cco/app/modules/register/bindings/register_binding.dart';
 import 'package:tfg_cco/app/modules/register/views/register_view.dart';
 
@@ -13,7 +15,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.LOGIN;
+  static const INITIAL = Routes.PRE_LOGIN;
 
   static final routes = [
     GetPage(
@@ -35,6 +37,11 @@ class AppPages {
       name: _Paths.FORGOT_PASSWORD,
       page: () => ForgotPasswordView(),
       binding: ForgotPasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.PRE_LOGIN,
+      page: () => PreLoginView(),
+      binding: PreLoginBinding(),
     ),
   ];
 }
