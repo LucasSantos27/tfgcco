@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final String title;
-  const CustomButton({required this.title});
+  final VoidCallback onTap;
+  const CustomButton({required this.title, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: InkWell(
-        onTap: () => print('ENTRAR'),
+        onTap: onTap,
         child: Container(
           height: 48,
           child: Container(

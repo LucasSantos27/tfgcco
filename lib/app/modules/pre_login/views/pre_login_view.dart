@@ -28,7 +28,10 @@ class PreLoginView extends GetView<PreLoginController> {
                 child: Image.asset('assets/logo.png'),
               ),
               const SizedBox(height: 64),
-              CustomButton(title: 'ENTRAR'),
+              CustomButton(
+                title: 'ENTRAR',
+                onTap: () => Get.toNamed(Routes.HOME),
+              ),
             ],
           ),
         ),

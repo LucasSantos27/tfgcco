@@ -37,7 +37,10 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
             ),
           ),
           const SizedBox(height: 64),
-          CustomButton(title: 'ENVIAR')
+          CustomButton(
+            title: 'ENVIAR',
+            onTap: () => debugPrint('Enviado'),
+          )
         ],
       ),
     );

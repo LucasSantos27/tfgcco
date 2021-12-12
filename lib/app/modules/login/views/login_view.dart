@@ -24,11 +24,11 @@ class LoginView extends GetView<LoginController> {
                 child: Image.asset('assets/logo.png'),
               ),
               const SizedBox(height: 32),
-              const CustomTextField(
+              CustomTextField(
                 hintText: 'EMAIL',
               ),
               const SizedBox(height: 32),
-              const CustomTextField(
+              CustomTextField(
                 hintText: 'SENHA',
               ),
               const SizedBox(height: 16),
@@ -59,7 +59,10 @@ class LoginView extends GetView<LoginController> {
                 ),
               ),
               const SizedBox(height: 64),
-              CustomButton(title: 'ENTRAR'),
+              CustomButton(
+                title: 'ENTRAR',
+                onTap: () => Get.toNamed(Routes.HOME),
+              ),
               const SizedBox(height: 32),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16),

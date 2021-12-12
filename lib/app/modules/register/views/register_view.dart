@@ -36,15 +36,35 @@ class RegisterView extends GetView<RegisterController> {
             ),
           ),
           const SizedBox(height: 24),
-          CustomTextField(hintText: 'NOME'),
+          CustomTextField(
+            hintText: 'NOME',
+            controller: controller.nameController,
+          ),
           const SizedBox(height: 24),
-          CustomTextField(hintText: 'EMAIL'),
+          CustomTextField(
+            hintText: 'EMAIL',
+            controller: controller.emailController,
+          ),
           const SizedBox(height: 24),
-          CustomTextField(hintText: 'CPF'),
+          CustomTextField(
+            hintText: 'CPF',
+            controller: controller.cpfController,
+          ),
           const SizedBox(height: 24),
-          CustomTextField(hintText: 'SENHA'),
+          CustomTextField(
+            hintText: 'NASCIMENTO',
+            controller: controller.dateController,
+          ),
           const SizedBox(height: 24),
-          CustomTextField(hintText: 'CONFIRMAR SENHA'),
+          CustomTextField(
+            hintText: 'SENHA',
+            controller: controller.passwordController,
+          ),
+          const SizedBox(height: 24),
+          CustomTextField(
+            hintText: 'CONFIRMAR SENHA',
+            controller: controller.confirmPasswordController,
+          ),
           const SizedBox(height: 16),
           Row(
             children: [
@@ -54,7 +74,10 @@ class RegisterView extends GetView<RegisterController> {
             ],
           ),
           const SizedBox(height: 16),
-          CustomButton(title: 'REGISTRAR'),
+          CustomButton(
+            title: 'REGISTRAR',
+            onTap: controller.register,
+          ),
         ],
       ),
     );

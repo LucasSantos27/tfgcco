@@ -12,10 +12,10 @@ class CustomScaffold extends StatelessWidget {
       appBar: appBar,
       body: SingleChildScrollView(
         child: Container(
-          height: Get.mediaQuery.size.height - 80,
+          height: Get.mediaQuery.size.height - 60,
           color: Theme.of(context).primaryColor,
           child: Container(
-            padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
+            padding: const EdgeInsets.fromLTRB(16, 32, 16, 0),
             alignment: Alignment.center,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
