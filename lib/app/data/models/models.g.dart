@@ -31,12 +31,12 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
 Credentials _$CredentialsFromJson(Map<String, dynamic> json) {
   return Credentials(
     email: json['email'] as String,
-    senha: json['senha'] as String,
+    password: json['password'] as String,
   );
 }
 
 Map<String, dynamic> _$CredentialsToJson(Credentials instance) =>
     <String, dynamic>{
       'email': instance.email,
-      'senha': instance.senha,
+      'password': instance.password,
     };

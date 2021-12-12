@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatelessWidget {
   final String hintText;
   final TextEditingController? controller;
+  final bool? obscureText;
   CustomTextField({
     required this.hintText,
     this.controller,
+    this.obscureText,
   });
 
   @override
@@ -32,6 +34,7 @@ class CustomTextField extends StatelessWidget {
           fillColor: Colors.white70,
           contentPadding: const EdgeInsets.all(16),
         ),
+        obscureText: obscureText ?? false,
       ),
     );
   }

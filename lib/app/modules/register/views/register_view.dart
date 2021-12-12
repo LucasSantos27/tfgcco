@@ -59,11 +59,13 @@ class RegisterView extends GetView<RegisterController> {
           CustomTextField(
             hintText: 'SENHA',
             controller: controller.passwordController,
+            obscureText: true,
           ),
           const SizedBox(height: 24),
           CustomTextField(
             hintText: 'CONFIRMAR SENHA',
             controller: controller.confirmPasswordController,
+            obscureText: true,
           ),
           const SizedBox(height: 16),
           Row(

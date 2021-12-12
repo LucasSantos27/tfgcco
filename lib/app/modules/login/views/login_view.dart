@@ -26,10 +26,13 @@ class LoginView extends GetView<LoginController> {
               const SizedBox(height: 32),
               CustomTextField(
                 hintText: 'EMAIL',
+                controller: controller.emailController,
               ),
               const SizedBox(height: 32),
               CustomTextField(
                 hintText: 'SENHA',
+                controller: controller.passwordController,
+                obscureText: true,
               ),
               const SizedBox(height: 16),
               Container(
@@ -59,9 +62,12 @@ class LoginView extends GetView<LoginController> {
                 ),
               ),
               const SizedBox(height: 64),
-              CustomButton(
-                title: 'ENTRAR',
-                onTap: () => Get.toNamed(Routes.HOME),
+              Obx(
+                () => CustomButton(
+                  title: 'ENTRAR',
+                  onTap: controller.login,
+                  isLoading: controller.isLoading.value,
+                ),
               ),
               const SizedBox(height: 32),
               Container(

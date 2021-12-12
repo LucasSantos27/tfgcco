@@ -3,11 +3,11 @@ part of models;
 @JsonSerializable()
 class Credentials {
   final String email;
-  final String senha;
+  final String password;
 
   Credentials({
     required this.email,
-    required this.senha,
+    required this.password,
   });
 
   factory Credentials.fromJson(Map<String, dynamic> json) {
