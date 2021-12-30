@@ -7,7 +7,7 @@ class User {
   final String date;
   final String email;
   final String password;
-  final String confirmPassword;
+  final String confirmpassword;
   final String image;
 
   User({
@@ -16,7 +16,7 @@ class User {
     required this.date,
     required this.email,
     required this.password,
-    required this.confirmPassword,
+    required this.confirmpassword,
     required this.image,
   });
 

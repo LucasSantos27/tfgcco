@@ -23,7 +23,7 @@ class RegisterController extends GetxController {
       date: dateController.text,
       email: emailController.text,
       password: passwordController.text,
-      confirmPassword: confirmPasswordController.text,
+      confirmpassword: confirmPasswordController.text,
       image: image,
     );
     try {

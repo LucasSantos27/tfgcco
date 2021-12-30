@@ -1,20 +1,22 @@
 import 'package:get/get.dart';
+import 'package:tfg_cco/app/data/models/models.dart';
+import 'package:tfg_cco/app/data/repositories/product_repository.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
+  final products = <Product>[].obs;
+  final productRepository = ProductRepository();
 
-  final count = 0.obs;
+  Future<void> getAllProducts() async {
+    try {
+      products.value = await productRepository.getAllProducts();
+    } catch (e) {
+      Get.snackbar('Error', e.toString());
+    }
+  }
+
   @override
   void onInit() {
+    getAllProducts();
     super.onInit();
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
 }
