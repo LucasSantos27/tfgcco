@@ -19,7 +19,7 @@ class LoginController extends GetxController {
       String token = await userRepository.login(credentials);
 
       final storage = GetStorage();
-      storage.write('token', '$token');
+      storage.write('token', token);
       debugPrint('${storage.read('token')}');
 
       isLoading.value = false;

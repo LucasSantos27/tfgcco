@@ -15,7 +15,7 @@ class ProductRepository extends GetConnect {
 
       return response;
     } catch (e) {
-      throw e;
+      rethrow;
     }
   }
 }

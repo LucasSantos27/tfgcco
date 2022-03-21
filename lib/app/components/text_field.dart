@@ -18,7 +18,7 @@ class CustomTextField extends StatelessWidget {
         controller: controller ?? TextEditingController(),
         decoration: InputDecoration(
           enabledBorder: const OutlineInputBorder(
-            borderSide: const BorderSide(
+            borderSide: BorderSide(
               color: Color.fromRGBO(192, 192, 192, 1),
               width: 1.3,
             ),

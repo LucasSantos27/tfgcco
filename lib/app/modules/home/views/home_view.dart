@@ -16,7 +16,7 @@ class HomeView extends GetView<HomeController> {
           leading: Image.asset('assets/cdc_logo.png')),
       body: Obx(() {
         return Visibility(
-          visible: controller.products.length > 0,
+          visible: controller.products.isNotEmpty,
           child: GridView.count(
             crossAxisCount: 2,
             children: List.generate(controller.products.length, (index) {
@@ -31,7 +31,7 @@ class HomeView extends GetView<HomeController> {
                     Container(
                       height: 128,
                       width: 128,
-                      child: Image.asset("assets/marcas/${image}"),
+                      child: Image.asset("assets/marcas/$image"),
                     ),
                     SizedBox(
                       height: 16,
@@ -40,13 +40,13 @@ class HomeView extends GetView<HomeController> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          '${controller.products[index].nome}',
+                          controller.products[index].nome,
                           style: TextStyle(
                             fontSize: 16,
                           ),
                         ),
                         Text(
-                          '${controller.products[index].preco}',
+                          controller.products[index].preco,
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,

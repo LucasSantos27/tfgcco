@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:get/get.dart';
 import 'package:tfg_cco/app/modules/forgot_password/bindings/forgot_password_binding.dart';
 import 'package:tfg_cco/app/modules/forgot_password/views/forgot_password_view.dart';

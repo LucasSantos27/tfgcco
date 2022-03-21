@@ -15,7 +15,7 @@ class UserRepository extends GetConnect {
       },
     );
 
-    debugPrint('${token}');
+    debugPrint(token);
 
     if (response.hasError) {
       throw Exception('Erro ao logar');
@@ -34,7 +34,7 @@ class UserRepository extends GetConnect {
       },
     );
 
-    debugPrint('${token}');
+    debugPrint(token);
 
     if (response.hasError) {
       throw Exception('Erro ao registar');

@@ -30,7 +30,7 @@ class RegisterController extends GetxController {
       String token = await userRepository.register(user);
 
       final storage = GetStorage();
-      storage.write('token', '$token');
+      storage.write('token', token);
       debugPrint('${storage.read('token')}');
 
       Get.offAllNamed(Routes.HOME);
