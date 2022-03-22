@@ -4,7 +4,10 @@ import 'package:get/get.dart';
 class CustomScaffold extends StatelessWidget {
   final Widget body;
   final PreferredSizeWidget appBar;
-  const CustomScaffold({required this.body, required this.appBar});
+  const CustomScaffold({
+    required this.body,
+    required this.appBar,
+  });
 
   @override
   Widget build(BuildContext context) {

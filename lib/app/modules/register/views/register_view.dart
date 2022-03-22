@@ -13,8 +13,10 @@ class RegisterView extends GetView<RegisterController> {
     return CustomScaffold(
       appBar: AppBar(
         elevation: 0,
-        title: Text('CADASTRO'),
+        title: Text('CADASTRO', style: context.textTheme.headline6),
         centerTitle: true,
+        backgroundColor: context.theme.colorScheme.primary,
+        foregroundColor: context.theme.colorScheme.background,
       ),
       body: Column(
         children: [

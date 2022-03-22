@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tfg_cco/app/theme.dart';
 
 import 'app/routes/app_pages.dart';
 
@@ -10,9 +11,7 @@ void main() {
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: Color.fromRGBO(0, 156, 59, 1),
-      ),
+      theme: AppTheme.currentTheme,
     ),
   );
 }

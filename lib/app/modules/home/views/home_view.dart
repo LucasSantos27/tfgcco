@@ -9,11 +9,13 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return CustomScaffold(
       appBar: AppBar(
-          elevation: 0,
-          actions: [
-            Image.asset('assets/home_logo.png'),
-          ],
-          leading: Image.asset('assets/cdc_logo.png')),
+        backgroundColor: context.theme.colorScheme.primary,
+        elevation: 0,
+        actions: [
+          Image.asset('assets/home_logo.png'),
+        ],
+        leading: Image.asset('assets/cdc_logo.png'),
+      ),
       body: Obx(() {
         return Visibility(
           visible: controller.products.isNotEmpty,
@@ -25,7 +27,7 @@ class HomeView extends GetView<HomeController> {
                 margin: EdgeInsets.all(4),
                 padding: EdgeInsets.all(4),
                 alignment: Alignment.center,
-                color: Color(0xffF5F5F5),
+                color: Colors.white,
                 child: Column(
                   children: [
                     Container(
