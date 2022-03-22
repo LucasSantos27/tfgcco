@@ -4,17 +4,20 @@ class CustomTextField extends StatelessWidget {
   final String hintText;
   final TextEditingController? controller;
   final bool? obscureText;
+  final String? Function(String? tag)? validator;
   CustomTextField({
     required this.hintText,
     this.controller,
     this.obscureText,
+    this.validator,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: TextField(
+      child: TextFormField(
+        validator: validator,
         controller: controller ?? TextEditingController(),
         decoration: InputDecoration(
           enabledBorder: const OutlineInputBorder(
