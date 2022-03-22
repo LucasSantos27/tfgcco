@@ -27,7 +27,7 @@ class AppTheme {
       fontSize: 32,
     ),
     headline6: TextStyle(
-      fontSize: 32,
+      fontSize: 24,
       fontWeight: FontWeight.bold,
       color: Colors.white,
     ),
@@ -35,7 +35,6 @@ class AppTheme {
 
   static final currentTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
-    primaryColor: Color.fromRGBO(0, 156, 59, 1),
     colorScheme: const ColorScheme(
       primary: Color.fromRGBO(0, 156, 59, 1),
       secondary: Colors.grey,
