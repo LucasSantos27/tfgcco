@@ -87,8 +87,17 @@ class RegisterView extends GetView<RegisterController> {
             const SizedBox(height: 16),
             Row(
               children: [
-                Checkbox(value: false, onChanged: (t) {}),
-                const SizedBox(width: 16),
+                Obx(() => Transform.scale(
+                      scale: 1.2,
+                      child: Checkbox(
+                        activeColor: context.theme.colorScheme.primary,
+                        shape: CircleBorder(),
+                        value: controller.isAcceptedTerm.value,
+                        onChanged: (t) {
+                          controller.isAcceptedTerm.value = t!;
+                        },
+                      ),
+                    )),
                 NormalBold(normal: 'Li e aceito os', bold: ' Termos de Uso'),
               ],
             ),

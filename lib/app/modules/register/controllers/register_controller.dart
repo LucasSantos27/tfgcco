@@ -6,6 +6,7 @@ import 'package:tfg_cco/app/data/repositories/user_repository.dart';
 import 'package:tfg_cco/app/routes/app_pages.dart';
 
 class RegisterController extends GetxController {
+  final isAcceptedTerm = false.obs;
   final formKey = GlobalKey<FormState>();
   final isLoading = false.obs;
   final nameController = TextEditingController();
