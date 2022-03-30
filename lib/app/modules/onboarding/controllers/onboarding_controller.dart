@@ -56,7 +56,7 @@ class OnboardingController extends GetxController {
       textConfirm: 'SIM',
       textCancel: 'NÃO',
       onConfirm: () => Get.offAllNamed(Routes.LOGIN),
-      onCancel: () => Get.offAllNamed(Routes.HOME),
+      onCancel: () => Get.offAllNamed(Routes.LANDING),
     );
   }
 }

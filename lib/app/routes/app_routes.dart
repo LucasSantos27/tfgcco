@@ -5,19 +5,23 @@ part of 'app_pages.dart';
 
 abstract class Routes {
   Routes._();
-  static const INTRODUCTION = _Paths.INTRODUCTION;
   static const ONBOARDING = _Paths.ONBOARDING;
-  static const HOME = _Paths.HOME;
+  static const INTRODUCTION = _Paths.INTRODUCTION;
   static const LOGIN = _Paths.LOGIN;
   static const REGISTER = _Paths.REGISTER;
   static const FORGOT_PASSWORD = _Paths.FORGOT_PASSWORD;
+  static const LANDING = _Paths.LANDING;
+  static const HOME = _Paths.HOME;
+  static const PROFILE = _Paths.PROFILE;
 }
 
 abstract class _Paths {
-  static const INTRODUCTION = '/introduction';
   static const ONBOARDING = '/onboarding';
-  static const HOME = '/home';
+  static const INTRODUCTION = '/introduction';
   static const LOGIN = '/login';
   static const REGISTER = '/register';
   static const FORGOT_PASSWORD = '/forgot-password';
+  static const LANDING = '/';
+  static const HOME = '/home';
+  static const PROFILE = '/profile';
 }

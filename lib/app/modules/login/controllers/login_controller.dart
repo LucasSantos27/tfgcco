@@ -26,7 +26,7 @@ class LoginController extends GetxController {
 
         isLoading.value = false;
 
-        Get.offAllNamed(Routes.HOME);
+        Get.offAllNamed(Routes.LANDING);
       } catch (e) {
         isLoading.value = false;
         Get.snackbar('Error', e.toString());
