@@ -12,6 +12,7 @@ dependencies:
   get: 4.3.8
   get_storage: 2.0.3
   json_annotation: ^4.0.1
+  smooth_page_indicator: ^1.0.0+2
   validatorless: ^1.2.1
 
   flutter: 
