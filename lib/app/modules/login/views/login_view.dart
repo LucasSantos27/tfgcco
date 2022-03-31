@@ -45,7 +45,7 @@ class LoginView extends GetView<LoginController> {
                 const SizedBox(height: 16),
                 Container(
                   alignment: Alignment.centerLeft,
-                  padding: const EdgeInsets.symmetric(horizontal: 32),
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: InkWell(
                     onTap: () => Get.toNamed(Routes.FORGOT_PASSWORD),
                     child: Column(
@@ -69,12 +69,48 @@ class LoginView extends GetView<LoginController> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 64),
+                const SizedBox(height: 48),
                 Obx(
                   () => CustomButton(
                     title: 'ENTRAR',
                     onTap: controller.login,
                     isLoading: controller.isLoading.value,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: InkWell(
+                    onTap: () => Get.toNamed(Routes.HOME),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.person,
+                              color: Color.fromRGBO(0, 39, 118, 1),
+                            ),
+                            const SizedBox(width: 16),
+                            Text(
+                              'LOGIN ANÔNIMO',
+                              style: TextStyle(
+                                color: Color.fromRGBO(0, 39, 118, 1),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 4),
+                        Container(
+                          width: 176,
+                          height: 2,
+                          color: Color.fromRGBO(0, 39, 118, 1),
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(height: 32),

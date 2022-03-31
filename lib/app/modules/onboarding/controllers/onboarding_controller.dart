@@ -33,30 +33,12 @@ class OnboardingController extends GetxController {
 
   void nextPage() {
     if (currentPage.value == pages.length - 1) {
-      finishIntroduction();
+      Get.offAllNamed(Routes.LOGIN);
     } else {
       pageController.nextPage(
         duration: const Duration(milliseconds: 500),
         curve: Curves.easeOut,
       );
     }
-  }
-
-  Future<void> finishIntroduction() async {
-    Get.defaultDialog(
-      title: 'Você deseja logar?',
-      titleStyle: Get.textTheme.headline6!.copyWith(
-        color: Get.theme.colorScheme.primary,
-        fontWeight: FontWeight.w600,
-      ),
-      content: SizedBox(),
-      buttonColor: Get.theme.colorScheme.primary,
-      cancelTextColor: Get.theme.colorScheme.primary,
-      confirmTextColor: Colors.white,
-      textConfirm: 'SIM',
-      textCancel: 'NÃO',
-      onConfirm: () => Get.offAllNamed(Routes.LOGIN),
-      onCancel: () => Get.offAllNamed(Routes.LANDING),
-    );
   }
 }
