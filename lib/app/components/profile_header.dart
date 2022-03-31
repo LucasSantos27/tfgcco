@@ -11,7 +11,7 @@ class ProfileHeader extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 16),
       child: Column(
         children: [
-          const ProfileAvatar(),
+          const ProfileAvatar(hasImage: true),
           Text(
             'Profile Name',
             style: context.textTheme.headline5,

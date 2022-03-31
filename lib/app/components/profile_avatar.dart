@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProfileAvatar extends StatelessWidget {
-  const ProfileAvatar({Key? key}) : super(key: key);
+  final bool hasImage;
+  const ProfileAvatar({
+    this.hasImage = false,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +19,28 @@ class ProfileAvatar extends StatelessWidget {
             margin: const EdgeInsets.symmetric(vertical: 16),
             decoration: BoxDecoration(
               border: Border.all(
-                color: context.theme.colorScheme.primary,
+                color: Color.fromRGBO(192, 192, 192, 1),
                 width: 2,
               ),
               shape: BoxShape.circle,
             ),
-            child: ClipOval(
-              child: Image.network(
-                'https://picsum.photos/128',
-                fit: BoxFit.contain,
+            child: Visibility(
+              visible: hasImage,
+              child: ClipOval(
+                child: Image.network(
+                  'https://picsum.photos/128',
+                  fit: BoxFit.contain,
+                ),
+              ),
+              replacement: Container(
+                alignment: Alignment.center,
+                child: Text(
+                  'Escolha uma imagem',
+                  textAlign: TextAlign.center,
+                  style: context.textTheme.subtitle2!.copyWith(
+                    color: context.theme.colorScheme.primary,
+                  ),
+                ),
               ),
             ),
           ),
@@ -38,7 +55,7 @@ class ProfileAvatar extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: context.theme.colorScheme.surface,
                   border: Border.all(
-                    color: context.theme.colorScheme.primary,
+                    color: Color.fromRGBO(192, 192, 192, 1),
                     width: 2,
                   ),
                   shape: BoxShape.circle,
