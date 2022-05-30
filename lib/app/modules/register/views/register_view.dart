@@ -1,4 +1,6 @@
+import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:tfg_cco/app/components/button.dart';
 import 'package:tfg_cco/app/components/profile_avatar.dart';
@@ -36,6 +38,7 @@ class RegisterView extends GetView<RegisterController> {
               CustomTextField(
                 hintText: 'EMAIL',
                 controller: controller.emailController,
+                keyboardType: TextInputType.emailAddress,
                 validator: Validatorless.multiple([
                   Validatorless.email('Esse campo deve ser um email'),
                   Validatorless.required('Campo Obrigatório')
@@ -43,18 +46,41 @@ class RegisterView extends GetView<RegisterController> {
               ),
               const SizedBox(height: 24),
               CustomTextField(
+                hintText: 'CELULAR',
+                controller: controller.phoneController,
+                keyboardType: TextInputType.phone,
+                validator: Validatorless.multiple([
+                  Validatorless.required('Campo Obrigatório'),
+                ]),
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly,
+                  TelefoneInputFormatter(),
+                ],
+              ),
+              const SizedBox(height: 24),
+              CustomTextField(
                 hintText: 'CPF',
                 controller: controller.cpfController,
+                keyboardType: TextInputType.number,
                 validator: Validatorless.multiple([
                   Validatorless.cpf('Esse campo deve ser um cpf'),
                   Validatorless.required('Campo Obrigatório')
                 ]),
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly,
+                  CpfInputFormatter(),
+                ],
               ),
               const SizedBox(height: 24),
               CustomTextField(
                 hintText: 'NASCIMENTO',
                 controller: controller.dateController,
                 validator: Validatorless.required('Campo Obrigatório'),
+                keyboardType: TextInputType.datetime,
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly,
+                  DataInputFormatter(),
+                ],
               ),
               const SizedBox(height: 24),
               CustomTextField(

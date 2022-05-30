@@ -4,20 +4,20 @@ part of models;
 class User {
   final String name;
   final String cpf;
-  final String date;
+  final DateTime birthday;
   final String email;
   final String password;
-  final String confirmpassword;
   final String image;
+  final String phone;
 
   User({
     required this.name,
     required this.cpf,
-    required this.date,
+    required this.birthday,
     required this.email,
     required this.password,
-    required this.confirmpassword,
     required this.image,
+    required this.phone,
   });
 
   factory User.fromJson(Map<String, dynamic> json) {

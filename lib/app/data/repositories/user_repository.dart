@@ -25,21 +25,15 @@ class UserRepository extends GetConnect {
   }
 
   Future<String> register(User user) async {
-    String token = "";
     final response = await post(
       EndPoints.register,
       user.toJson(),
-      decoder: (body) {
-        token = body["token"];
-      },
     );
-
-    debugPrint(token);
 
     if (response.hasError) {
       throw Exception('Erro ao registar');
     }
 
-    return token;
+    return response.body['token'];
   }
 }

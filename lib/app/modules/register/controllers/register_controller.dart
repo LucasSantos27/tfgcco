@@ -1,3 +1,4 @@
+import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -13,35 +14,51 @@ class RegisterController extends GetxController {
   final cpfController = TextEditingController();
   final dateController = TextEditingController();
   final emailController = TextEditingController();
+  final phoneController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
   final image = 'imgurl';
 
   final userRepository = UserRepository();
 
-  Future<void> register() async {
-    if (formKey.currentState!.validate()) {
-      isLoading.value = true;
-      final user = User(
-        name: nameController.text,
-        cpf: cpfController.text,
-        date: dateController.text,
-        email: emailController.text,
-        password: passwordController.text,
-        confirmpassword: confirmPasswordController.text,
-        image: image,
-      );
-      try {
-        String token = await userRepository.register(user);
+  DateTime convertStringToBrazilDate(String brDate) {
+    var splitedDate = brDate.split('/');
 
-        final storage = GetStorage();
-        storage.write('token', token);
-        isLoading.value = false;
-        Get.offAllNamed(Routes.HOME);
-      } catch (e) {
-        isLoading.value = false;
-        Get.snackbar('Error', e.toString());
+    print(splitedDate);
+    return DateTime.parse(
+        '${splitedDate[2]}-${splitedDate[1]}-${splitedDate[0]}');
+  }
+
+  Future<void> register() async {
+    if (confirmPasswordController.text == passwordController.text) {
+      if (formKey.currentState!.validate()) {
+        isLoading.value = true;
+        final user = User(
+          name: nameController.text,
+          cpf: cpfController.text,
+          birthday: convertStringToBrazilDate(dateController.text),
+          email: emailController.text,
+          password: passwordController.text,
+          image: image,
+          phone: UtilBrasilFields.obterTelefone(
+            phoneController.text,
+            mascara: false,
+          ),
+        );
+        try {
+          String token = await userRepository.register(user);
+
+          final storage = GetStorage();
+          storage.write('token', token);
+          isLoading.value = false;
+          Get.offAllNamed(Routes.HOME);
+        } catch (e) {
+          isLoading.value = false;
+          Get.snackbar('Erro:', e.toString());
+        }
       }
+    } else {
+      Get.snackbar('Erro:', 'Senhas não condizem');
     }
   }
 }
