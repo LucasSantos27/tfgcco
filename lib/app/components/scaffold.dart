@@ -16,6 +16,7 @@ class CustomScaffold extends StatelessWidget {
     return Scaffold(
       appBar: appBar,
       body: Container(
+        width: double.infinity,
         color: context.theme.colorScheme.primary,
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 16),

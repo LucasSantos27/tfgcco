@@ -10,6 +10,8 @@ import 'package:tfg_cco/app/modules/login/views/login_view.dart';
 import 'package:tfg_cco/app/modules/onboarding/bindings/onboarding_binding.dart';
 import 'package:tfg_cco/app/modules/onboarding/views/introduction_view.dart';
 import 'package:tfg_cco/app/modules/onboarding/views/onboarding_view.dart';
+import 'package:tfg_cco/app/modules/products/bindings/product_binding.dart';
+import 'package:tfg_cco/app/modules/products/views/product_view.dart';
 import 'package:tfg_cco/app/modules/profile/bindings/profile_binding.dart';
 import 'package:tfg_cco/app/modules/register/bindings/register_binding.dart';
 import 'package:tfg_cco/app/modules/register/views/register_view.dart';
@@ -56,6 +58,11 @@ class AppPages {
       name: _Paths.FORGOT_PASSWORD,
       page: () => ForgotPasswordView(),
       binding: ForgotPasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.PRODUCT,
+      page: () => ProductView(),
+      binding: ProductBinding(),
     ),
   ];
 }

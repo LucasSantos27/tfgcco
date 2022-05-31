@@ -4,9 +4,11 @@ class CustomButton extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
   final bool isLoading;
+  final Color? color;
   const CustomButton({
     required this.title,
     required this.onTap,
+    this.color,
     this.isLoading = false,
   });
 
@@ -20,7 +22,7 @@ class CustomButton extends StatelessWidget {
           height: 48,
           child: Container(
             decoration: BoxDecoration(
-              color: Color.fromRGBO(0, 156, 59, 1),
+              color: color ?? Color.fromRGBO(0, 156, 59, 1),
               borderRadius: BorderRadius.circular(8),
             ),
             alignment: Alignment.center,
