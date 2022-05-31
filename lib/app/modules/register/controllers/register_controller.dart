@@ -2,6 +2,7 @@ import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:tfg_cco/app/controllers/base_picker_controller.dart';
 import 'package:tfg_cco/app/data/models/models.dart';
 import 'package:tfg_cco/app/data/repositories/user_repository.dart';
 import 'package:tfg_cco/app/routes/app_pages.dart';
@@ -17,7 +18,7 @@ class RegisterController extends GetxController {
   final phoneController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
-  final image = 'imgurl';
+  final BasePickerController imageController = Get.find();
 
   final userRepository = UserRepository();
 
@@ -39,7 +40,7 @@ class RegisterController extends GetxController {
           birthday: convertStringToBrazilDate(dateController.text),
           email: emailController.text,
           password: passwordController.text,
-          image: image,
+          image: imageController.imageUrl.value,
           phone: UtilBrasilFields.obterTelefone(
             phoneController.text,
             mascara: false,

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "345477969614",
+    "project_id": "cdc-tfg",
+    "storage_bucket": "cdc-tfg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:345477969614:android:48680e84f589a9ffa5429f",
+        "android_client_info": {
+          "package_name": "br.com.cachaca.tfg_cco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "345477969614-c3gp7mplpr03faf8g8fv3dqsiuh7r168.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhOBNoF8KmZ0g0E4CFh_je4BnTDIv01GY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "345477969614-c3gp7mplpr03faf8g8fv3dqsiuh7r168.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

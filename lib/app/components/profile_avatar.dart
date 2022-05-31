@@ -9,7 +9,7 @@ class ProfileAvatar extends GetWidget<BasePickerController> {
     this.hasImage = false,
     Key? key,
   }) : super(key: key) {
-    Get.create<BasePickerController>(() => BasePickerController());
+    Get.lazyPut<BasePickerController>(() => BasePickerController());
   }
 
   @override
