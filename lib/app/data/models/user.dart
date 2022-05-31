@@ -6,18 +6,18 @@ class User {
   final String cpf;
   final DateTime birthday;
   final String email;
-  final String password;
-  final String image;
-  final String phone;
+  String? password;
+  String? image;
+  String? phone;
 
   User({
     required this.name,
     required this.cpf,
     required this.birthday,
     required this.email,
-    required this.password,
-    required this.image,
-    required this.phone,
+    this.password,
+    this.image,
+    this.phone,
   });
 
   factory User.fromJson(Map<String, dynamic> json) {

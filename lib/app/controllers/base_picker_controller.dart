@@ -13,7 +13,7 @@ class BasePickerController extends GetxController {
 
   Future<void> pickImage() async {
     Get.defaultDialog(
-      title: 'select_image'.tr,
+      title: 'Selecione a imagem',
       middleText: '',
       cancel: IconButton(
         icon: Icon(
@@ -52,8 +52,6 @@ class BasePickerController extends GetxController {
           .child('file/');
       await ref.putFile(File(path.value));
       imageUrl.value = await ref.getDownloadURL();
-
-      print(imageUrl.value);
     } catch (e) {
       Get.snackbar('Erro:', 'Não foi possivel subir a imagem');
       path.value = '';

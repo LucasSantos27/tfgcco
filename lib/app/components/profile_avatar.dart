@@ -4,8 +4,10 @@ import 'package:get/get.dart';
 import 'package:tfg_cco/app/controllers/base_picker_controller.dart';
 
 class ProfileAvatar extends GetWidget<BasePickerController> {
+  final String? imageUrl;
   final bool hasImage;
   ProfileAvatar({
+    this.imageUrl,
     this.hasImage = false,
     Key? key,
   }) : super(key: key) {
@@ -41,8 +43,8 @@ class ProfileAvatar extends GetWidget<BasePickerController> {
                   visible: hasImage,
                   child: ClipOval(
                     child: Image.network(
-                      'https://picsum.photos/128',
-                      fit: BoxFit.contain,
+                      imageUrl ?? 'https://picsum.photos/128',
+                      fit: BoxFit.fill,
                     ),
                   ),
                   replacement: Container(

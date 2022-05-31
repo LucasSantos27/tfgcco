@@ -10,7 +10,17 @@ class ProfileView extends GetView<ProfileController> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const ProfileHeader(),
+          Obx(
+            () => Visibility(
+              visible: controller.isLoading.value == false,
+              child: ProfileHeader(
+                user: controller.user.value,
+              ),
+              replacement: CircularProgressIndicator(
+                color: context.theme.colorScheme.primary,
+              ),
+            ),
+          ),
           const SizedBox(height: 8),
           ListView.builder(
             shrinkWrap: true,
