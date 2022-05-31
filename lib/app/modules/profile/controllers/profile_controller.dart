@@ -17,13 +17,8 @@ class ProfileController extends GetxController {
       onTap: () {},
     ),
     ProfileTile(
-      leading: Icons.lock,
-      title: 'Alterar Senha',
-      onTap: () {},
-    ),
-    ProfileTile(
-      leading: Icons.settings,
-      title: 'Configurações',
+      leading: Icons.credit_card,
+      title: 'Planos',
       onTap: () {},
     ),
     ProfileTile(
