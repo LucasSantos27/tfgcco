@@ -27,7 +27,7 @@ class RegisterView extends GetView<RegisterController> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const ProfileAvatar(),
+              ProfileAvatar(),
               const SizedBox(height: 24),
               CustomTextField(
                 hintText: 'NOME',

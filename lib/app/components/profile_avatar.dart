@@ -1,12 +1,16 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tfg_cco/app/controllers/base_picker_controller.dart';
 
-class ProfileAvatar extends StatelessWidget {
+class ProfileAvatar extends GetWidget<BasePickerController> {
   final bool hasImage;
-  const ProfileAvatar({
+  ProfileAvatar({
     this.hasImage = false,
     Key? key,
-  }) : super(key: key);
+  }) : super(key: key) {
+    Get.create<BasePickerController>(() => BasePickerController());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,21 +28,32 @@ class ProfileAvatar extends StatelessWidget {
               ),
               shape: BoxShape.circle,
             ),
-            child: Visibility(
-              visible: hasImage,
-              child: ClipOval(
-                child: Image.network(
-                  'https://picsum.photos/128',
-                  fit: BoxFit.contain,
+            child: Obx(
+              () => Visibility(
+                visible: controller.path.value.isEmpty,
+                replacement: ClipOval(
+                  child: Image.file(
+                    File(controller.path.value),
+                    fit: BoxFit.fill,
+                  ),
                 ),
-              ),
-              replacement: Container(
-                alignment: Alignment.center,
-                child: Text(
-                  'Escolha uma imagem',
-                  textAlign: TextAlign.center,
-                  style: context.textTheme.subtitle2!.copyWith(
-                    color: context.theme.colorScheme.primary,
+                child: Visibility(
+                  visible: hasImage,
+                  child: ClipOval(
+                    child: Image.network(
+                      'https://picsum.photos/128',
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                  replacement: Container(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Escolha uma imagem',
+                      textAlign: TextAlign.center,
+                      style: context.textTheme.subtitle2!.copyWith(
+                        color: context.theme.colorScheme.primary,
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -48,7 +63,7 @@ class ProfileAvatar extends StatelessWidget {
             top: 16,
             right: 4,
             child: GestureDetector(
-              onTap: () {},
+              onTap: controller.pickImage,
               child: Container(
                 height: 32,
                 width: 32,
