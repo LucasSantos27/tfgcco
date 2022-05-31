@@ -4,25 +4,25 @@ part of models;
 
 @JsonSerializable()
 class Product {
-  final String nome;
-  final String marca_produto;
-  final String categoria;
-  final String descricao;
-  final String fabricante;
-  final String caracteristica;
-  final String preco;
-  final List<String> images;
+  final String name;
+  final String brand;
+  final String? category;
+  final String? description;
+  final String? manufacturer;
+  final String? info;
+  final dynamic price;
+  final String image;
   final bool available;
 
   Product({
-    required this.nome,
-    required this.marca_produto,
-    required this.categoria,
-    required this.descricao,
-    required this.fabricante,
-    required this.caracteristica,
-    required this.preco,
-    required this.images,
+    required this.name,
+    required this.brand,
+    this.category,
+    this.description,
+    this.manufacturer,
+    this.info,
+    required this.price,
+    required this.image,
     required this.available,
   });
 

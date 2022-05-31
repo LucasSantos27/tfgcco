@@ -18,27 +18,26 @@ Map<String, dynamic> _$CredentialsToJson(Credentials instance) =>
     };
 
 Product _$ProductFromJson(Map<String, dynamic> json) => Product(
-      nome: json['nome'] as String,
-      marca_produto: json['marca_produto'] as String,
-      categoria: json['categoria'] as String,
-      descricao: json['descricao'] as String,
-      fabricante: json['fabricante'] as String,
-      caracteristica: json['caracteristica'] as String,
-      preco: json['preco'] as String,
-      images:
-          (json['images'] as List<dynamic>).map((e) => e as String).toList(),
+      name: json['name'] as String,
+      brand: json['brand'] as String,
+      category: json['category'] as String?,
+      description: json['description'] as String?,
+      manufacturer: json['manufacturer'] as String?,
+      info: json['info'] as String?,
+      price: json['price'],
+      image: json['image'] as String,
       available: json['available'] as bool,
     );
 
 Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
-      'nome': instance.nome,
-      'marca_produto': instance.marca_produto,
-      'categoria': instance.categoria,
-      'descricao': instance.descricao,
-      'fabricante': instance.fabricante,
-      'caracteristica': instance.caracteristica,
-      'preco': instance.preco,
-      'images': instance.images,
+      'name': instance.name,
+      'brand': instance.brand,
+      'category': instance.category,
+      'description': instance.description,
+      'manufacturer': instance.manufacturer,
+      'info': instance.info,
+      'price': instance.price,
+      'image': instance.image,
       'available': instance.available,
     };
 
