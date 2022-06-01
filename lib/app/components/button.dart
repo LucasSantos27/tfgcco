@@ -73,10 +73,14 @@ class GoogleButton extends StatelessWidget {
 }
 
 class FacebookButton extends StatelessWidget {
+  final VoidCallback onTap;
+
+  const FacebookButton({required this.onTap});
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => print('FACEBOOK'),
+      onTap: onTap,
       child: Container(
         height: 48,
         child: Container(

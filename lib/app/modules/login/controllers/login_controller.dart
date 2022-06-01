@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:tfg_cco/app/data/models/models.dart';
@@ -31,6 +32,18 @@ class LoginController extends GetxController {
         isLoading.value = false;
         Get.snackbar('Error', e.toString());
       }
+    }
+  }
+
+  Future<void> facebookLogin() async {
+    try {
+      final response = await FacebookAuth.i.login();
+
+      if (response.status == LoginStatus.success) {
+        print(response);
+      }
+    } catch (e) {
+      Get.snackbar('Error', e.toString());
     }
   }
 }

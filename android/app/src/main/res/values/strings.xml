@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="facebook_app_id">984047242257731</string>
+    <string name="fb_login_protocol_scheme">fb984047242257731</string>
+    <string name="facebook_client_token">1cce94b4cf6da13d54a3906082a8aed4</string>
+    <string name="app_name">CDC - Clube da Cachaça</string>
+</resources>

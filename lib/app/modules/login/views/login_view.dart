@@ -121,7 +121,11 @@ class LoginView extends GetView<LoginController> {
                     children: [
                       Expanded(child: GoogleButton()),
                       const SizedBox(width: 16),
-                      Expanded(child: FacebookButton()),
+                      Expanded(
+                        child: FacebookButton(
+                          onTap: controller.facebookLogin,
+                        ),
+                      ),
                     ],
                   ),
                 ),
