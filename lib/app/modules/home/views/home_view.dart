@@ -53,7 +53,7 @@ class HomeView extends GetView<HomeController> {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: Get.theme.primaryColor,
+                            color: context.theme.colorScheme.primary,
                           ),
                         ),
                       ],

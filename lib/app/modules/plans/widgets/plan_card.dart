@@ -44,14 +44,12 @@ class FrontPlanCard extends StatelessWidget {
             onTap: () => isSelected ? null : print('trocar de plano'),
             child: Container(
               height: 36,
+              alignment: Alignment.center,
+              width: 180,
               padding: EdgeInsets.all(4),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(
-                  color: context.theme.colorScheme.primary,
-                  width: 3,
-                ),
               ),
               child: Text(
                 isSelected ? 'Plano selecionado' : 'Mudar de plano',
