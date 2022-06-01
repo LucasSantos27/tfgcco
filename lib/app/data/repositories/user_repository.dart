@@ -11,7 +11,7 @@ class UserRepository extends GetConnect {
     );
 
     if (response.hasError) {
-      throw Exception('Erro ao logar');
+      throw Exception('Erro ao logar: ${response.body['message']}');
     }
 
     return response.body['token'];
@@ -24,7 +24,7 @@ class UserRepository extends GetConnect {
     );
 
     if (response.hasError) {
-      throw Exception('Erro ao registar');
+      throw Exception('Erro ao registar: ${response.body['message']}');
     }
 
     return response.body['token'];

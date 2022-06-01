@@ -40,7 +40,7 @@ class RegisterView extends GetView<RegisterController> {
                 controller: controller.emailController,
                 keyboardType: TextInputType.emailAddress,
                 validator: Validatorless.multiple([
-                  Validatorless.email('Esse campo deve ser um email'),
+                  Validatorless.email('Esse campo deve ser um email valido'),
                   Validatorless.required('Campo Obrigatório')
                 ]),
               ),
@@ -63,7 +63,7 @@ class RegisterView extends GetView<RegisterController> {
                 controller: controller.cpfController,
                 keyboardType: TextInputType.number,
                 validator: Validatorless.multiple([
-                  Validatorless.cpf('Esse campo deve ser um cpf'),
+                  Validatorless.cpf('Esse campo deve ser um cpf valido'),
                   Validatorless.required('Campo Obrigatório')
                 ]),
                 inputFormatters: [
