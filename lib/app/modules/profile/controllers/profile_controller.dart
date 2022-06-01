@@ -19,7 +19,7 @@ class ProfileController extends GetxController {
     ProfileTile(
       leading: Icons.credit_card,
       title: 'Planos',
-      onTap: () {},
+      onTap: () => Get.toNamed(Routes.PLANS),
     ),
     ProfileTile(
       leading: Icons.logout,

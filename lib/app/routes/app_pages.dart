@@ -10,6 +10,8 @@ import 'package:tfg_cco/app/modules/login/views/login_view.dart';
 import 'package:tfg_cco/app/modules/onboarding/bindings/onboarding_binding.dart';
 import 'package:tfg_cco/app/modules/onboarding/views/introduction_view.dart';
 import 'package:tfg_cco/app/modules/onboarding/views/onboarding_view.dart';
+import 'package:tfg_cco/app/modules/plans/bindings/plans_binding.dart';
+import 'package:tfg_cco/app/modules/plans/views/plans_view.dart';
 import 'package:tfg_cco/app/modules/products/bindings/product_binding.dart';
 import 'package:tfg_cco/app/modules/products/views/product_view.dart';
 import 'package:tfg_cco/app/modules/profile/bindings/profile_binding.dart';
@@ -63,6 +65,11 @@ class AppPages {
       name: _Paths.PRODUCT,
       page: () => ProductView(),
       binding: ProductBinding(),
+    ),
+    GetPage(
+      name: _Paths.PLANS,
+      page: () => PlansView(),
+      binding: PlansBinding(),
     ),
   ];
 }
