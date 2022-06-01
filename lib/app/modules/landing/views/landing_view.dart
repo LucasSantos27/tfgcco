@@ -13,7 +13,21 @@ class LandingView extends GetView<LandingController> {
         backgroundColor: context.theme.colorScheme.primary,
         elevation: 0,
         actions: [
-          Image.asset('assets/home_logo.png'),
+          Obx(
+            () => Visibility(
+              visible: controller.isExistsToken.value,
+              child: IconButton(
+                icon: Icon(
+                  Icons.shopping_cart,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  print('cart');
+                },
+              ),
+              replacement: Image.asset('assets/home_logo.png'),
+            ),
+          ),
         ],
         leading: Image.asset('assets/cdc_logo.png'),
       ),

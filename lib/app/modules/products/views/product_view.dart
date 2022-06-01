@@ -5,6 +5,7 @@ import 'package:tfg_cco/app/components/button.dart';
 import 'package:tfg_cco/app/components/scaffold.dart';
 import 'package:tfg_cco/app/modules/products/controllers/product_controller.dart';
 import 'package:tfg_cco/app/network/end_points.dart';
+import 'package:tfg_cco/app/routes/app_pages.dart';
 
 class ProductView extends GetView<ProductController> {
   @override
@@ -43,12 +44,21 @@ class ProductView extends GetView<ProductController> {
             style: context.textTheme.headline5,
           ),
           const SizedBox(height: 32),
-          CustomButton(
-            title: controller.product.available
-                ? 'Adicionar no carrinho'
-                : 'Não disponivel',
-            onTap: () {},
-            color: controller.product.available ? null : Colors.grey,
+          Obx(
+            () => Visibility(
+              visible: controller.isExistsToken.value,
+              child: CustomButton(
+                title: controller.product.available
+                    ? 'Adicionar no carrinho'
+                    : 'Não disponivel',
+                onTap: () {},
+                color: controller.product.available ? null : Colors.grey,
+              ),
+              replacement: CustomButton(
+                title: 'ENTRAR',
+                onTap: () => Get.offAllNamed(Routes.LOGIN),
+              ),
+            ),
           ),
         ],
       ),

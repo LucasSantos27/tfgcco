@@ -26,6 +26,7 @@ class AppPages {
   AppPages._();
 
   static const INITIAL = Routes.ONBOARDING;
+  static const ONLOGGED = Routes.HOME;
 
   static final routes = [
     GetPage(

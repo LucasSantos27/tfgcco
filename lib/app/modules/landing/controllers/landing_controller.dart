@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:tfg_cco/app/modules/home/views/home_view.dart';
 import 'package:tfg_cco/app/modules/profile/views/profile_view.dart';
 
 class LandingController extends GetxController {
   final selectedIndex = 0.obs;
   final pageController = PageController();
+  final isExistsToken = false.obs;
+
+  Future<void> verifyToken() async {
+    final storage = GetStorage();
+    final token = storage.read('token');
+    isExistsToken.value = token != null;
+  }
 
   final views = <GetView>[
     HomeView(),
@@ -28,5 +36,11 @@ class LandingController extends GetxController {
       duration: const Duration(milliseconds: 500),
       curve: Curves.easeOut,
     );
+  }
+
+  @override
+  void onInit() {
+    verifyToken();
+    super.onInit();
   }
 }

@@ -23,7 +23,6 @@ class LoginController extends GetxController {
 
         final storage = GetStorage();
         storage.write('token', token);
-        debugPrint('${storage.read('token')}');
 
         isLoading.value = false;
 

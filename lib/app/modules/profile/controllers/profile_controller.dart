@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:tfg_cco/app/data/models/models.dart';
 import 'package:tfg_cco/app/data/models/profile_tile.dart';
 import 'package:tfg_cco/app/data/repositories/user_repository.dart';
@@ -9,6 +10,8 @@ class ProfileController extends GetxController {
   final user = Rxn<User>();
   final userRepository = UserRepository();
   final isLoading = false.obs;
+
+  final isExistsToken = false.obs;
 
   final profileTiles = [
     ProfileTile(
@@ -24,7 +27,11 @@ class ProfileController extends GetxController {
     ProfileTile(
       leading: Icons.logout,
       title: 'Sair',
-      onTap: () => Get.offAllNamed(Routes.LOGIN),
+      onTap: () {
+        final storage = GetStorage();
+        storage.write('token', null);
+        Get.offAllNamed(Routes.LOGIN);
+      },
     ),
   ];
 
@@ -39,9 +46,17 @@ class ProfileController extends GetxController {
     }
   }
 
+  Future<void> verifyToken() async {
+    final storage = GetStorage();
+    final token = storage.read('token');
+    isExistsToken.value = token != null;
+
+    if (isExistsToken.value) await getUserInfo();
+  }
+
   @override
   void onInit() {
-    getUserInfo();
+    verifyToken();
     super.onInit();
   }
 }
