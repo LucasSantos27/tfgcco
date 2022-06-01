@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tfg_cco/app/components/button.dart';
 import 'package:tfg_cco/app/components/scaffold.dart';
-import 'package:tfg_cco/app/modules/products/controllers/product_controller.dart';
+import 'package:tfg_cco/app/modules/product/controllers/product_controller.dart';
 import 'package:tfg_cco/app/network/end_points.dart';
 import 'package:tfg_cco/app/routes/app_pages.dart';
 
@@ -47,12 +47,25 @@ class ProductView extends GetView<ProductController> {
           Obx(
             () => Visibility(
               visible: controller.isExistsToken.value,
-              child: CustomButton(
-                title: controller.product.available
-                    ? 'Adicionar no carrinho'
-                    : 'Não disponivel',
-                onTap: () {},
-                color: controller.product.available ? null : Colors.grey,
+              child: Visibility(
+                visible:
+                    controller.cartController.findProduct(controller.product),
+                child: CustomButton(
+                  title: 'Remover do carrinho',
+                  onTap: () {
+                    controller.cartController.removeProduct(controller.product);
+                  },
+                  color: Colors.red,
+                ),
+                replacement: CustomButton(
+                  title: controller.product.available
+                      ? 'Adicionar no carrinho'
+                      : 'Não disponivel',
+                  onTap: () {
+                    controller.cartController.addProduct(controller.product);
+                  },
+                  color: controller.product.available ? null : Colors.grey,
+                ),
               ),
               replacement: CustomButton(
                 title: 'ENTRAR',

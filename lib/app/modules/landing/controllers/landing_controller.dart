@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:tfg_cco/app/controllers/cart_controller.dart';
 import 'package:tfg_cco/app/modules/home/views/home_view.dart';
 import 'package:tfg_cco/app/modules/profile/views/profile_view.dart';
 
@@ -8,6 +9,7 @@ class LandingController extends GetxController {
   final selectedIndex = 0.obs;
   final pageController = PageController();
   final isExistsToken = false.obs;
+  final CartController cartController = Get.find();
 
   Future<void> verifyToken() async {
     final storage = GetStorage();

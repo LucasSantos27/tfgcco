@@ -16,14 +16,42 @@ class LandingView extends GetView<LandingController> {
           Obx(
             () => Visibility(
               visible: controller.isExistsToken.value,
-              child: IconButton(
-                icon: Icon(
-                  Icons.shopping_cart,
-                  color: Colors.white,
-                ),
-                onPressed: () {
-                  print('cart');
-                },
+              child: Stack(
+                children: [
+                  IconButton(
+                    icon: Icon(
+                      Icons.shopping_cart,
+                      color: Colors.white,
+                      size: 24,
+                    ),
+                    onPressed: () {
+                      print('cart');
+                    },
+                  ),
+                  Positioned(
+                    right: 5,
+                    top: 5,
+                    child: Visibility(
+                      visible: controller.cartController.products.isNotEmpty,
+                      child: Container(
+                        height: 15,
+                        width: 15,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Text(
+                          '${controller.cartController.products.length}',
+                          style: context.textTheme.headline1?.copyWith(
+                            fontSize: 12,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
               replacement: Image.asset('assets/home_logo.png'),
             ),
