@@ -1,3 +1,4 @@
+import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tfg_cco/app/network/end_points.dart';
@@ -49,7 +50,9 @@ class HomeView extends GetView<HomeController> {
                           ),
                         ),
                         Text(
-                          'R\$ ${controller.products[index].price}',
+                          UtilBrasilFields.obterReal(
+                            controller.products[index].price.toDouble(),
+                          ),
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
