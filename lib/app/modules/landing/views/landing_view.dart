@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tfg_cco/app/components/scaffold.dart';
 import 'package:tfg_cco/app/modules/landing/controllers/landing_controller.dart';
+import 'package:tfg_cco/app/routes/app_pages.dart';
 
 class LandingView extends GetView<LandingController> {
   const LandingView({Key? key}) : super(key: key);
@@ -25,7 +26,7 @@ class LandingView extends GetView<LandingController> {
                       size: 24,
                     ),
                     onPressed: () {
-                      print('cart');
+                      Get.toNamed(Routes.CART);
                     },
                   ),
                   Positioned(

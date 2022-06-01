@@ -1,6 +1,8 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:get/get.dart';
+import 'package:tfg_cco/app/modules/cart/bindings/cart_binding.dart';
+import 'package:tfg_cco/app/modules/cart/views/cart_view.dart';
 import 'package:tfg_cco/app/modules/forgot_password/bindings/forgot_password_binding.dart';
 import 'package:tfg_cco/app/modules/forgot_password/views/forgot_password_view.dart';
 import 'package:tfg_cco/app/modules/home/bindings/home_binding.dart';
@@ -71,6 +73,11 @@ class AppPages {
       name: _Paths.PLANS,
       page: () => PlansView(),
       binding: PlansBinding(),
+    ),
+    GetPage(
+      name: _Paths.CART,
+      page: () => CartView(),
+      binding: CartBinding(),
     ),
   ];
 }
