@@ -3,6 +3,8 @@
 import 'package:get/get.dart';
 import 'package:tfg_cco/app/modules/cart/bindings/cart_binding.dart';
 import 'package:tfg_cco/app/modules/cart/views/cart_view.dart';
+import 'package:tfg_cco/app/modules/edit/bindings/edit_binding.dart';
+import 'package:tfg_cco/app/modules/edit/views/edit_view.dart';
 import 'package:tfg_cco/app/modules/forgot_password/bindings/forgot_password_binding.dart';
 import 'package:tfg_cco/app/modules/forgot_password/views/forgot_password_view.dart';
 import 'package:tfg_cco/app/modules/home/bindings/home_binding.dart';
@@ -78,6 +80,11 @@ class AppPages {
       name: _Paths.CART,
       page: () => CartView(),
       binding: CartBinding(),
+    ),
+    GetPage(
+      name: _Paths.EDIT,
+      page: () => EditView(),
+      binding: EditBinding(),
     ),
   ];
 }

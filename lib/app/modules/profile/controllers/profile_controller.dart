@@ -17,7 +17,7 @@ class ProfileController extends GetxController {
     ProfileTile(
       leading: Icons.account_box,
       title: 'Editar Perfil',
-      onTap: () {},
+      onTap: () => Get.toNamed(Routes.EDIT),
     ),
     ProfileTile(
       leading: Icons.credit_card,

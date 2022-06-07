@@ -5,4 +5,5 @@ abstract class EndPoints {
   static const products = '${baseUrl}products';
   static const srcImage = '$products/image/';
   static const userInfo = '${baseUrl}users/checkuser';
+  static const edit = '${baseUrl}users/edit';
 }

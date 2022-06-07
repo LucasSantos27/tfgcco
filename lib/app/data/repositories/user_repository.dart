@@ -30,6 +30,22 @@ class UserRepository extends GetConnect {
     return response.body['token'];
   }
 
+  Future<String> edit(User user, String id) async {
+    final storage = GetStorage();
+    final token = storage.read('token');
+    final response = await patch(
+      '${EndPoints.edit}/$id',
+      user.toJson(),
+      headers: {'Authorization': 'Bearer $token'},
+    );
+
+    if (response.hasError) {
+      throw Exception('Erro ao editar: ${response.body['message']}');
+    }
+
+    return response.body['message'];
+  }
+
   Future<User> getInfo() async {
     final storage = GetStorage();
     final token = storage.read('token');
@@ -41,6 +57,8 @@ class UserRepository extends GetConnect {
     if (response.hasError) {
       throw Exception('Erro ao receber informações do usuário');
     }
+
+    storage.write('id', response.body['_id']);
 
     return User.fromJson(response.body);
   }
